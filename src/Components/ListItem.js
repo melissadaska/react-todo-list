@@ -10,6 +10,11 @@ export default function ListItem({todo, id, checkComplete}) {
 
     const handleSave = id => {
         setOnEdit(false)
+        if (editvalue) {
+            handleEditTodos(editValue, id)
+        } else {
+            setEditValue(todo.name)
+        }
     }
 
     if(onEdit) {
