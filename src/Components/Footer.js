@@ -14,6 +14,14 @@ export default function Footer() {
         setCheckAll(!checkAll)
     }
 
+    const deleteTodo = () => {
+        const newTodos = todos.filter(todo => {
+            return todo.complete ==== flase
+        })
+        setTodos(newTodos)
+        setCheckAll(false)
+    }
+
     return (
         <div className="row">
             <label htmlFor="all">
@@ -22,7 +30,7 @@ export default function Footer() {
                 ALL
             </label>
             <p>You have {todos.length} to do</p>
-            <button id="delete">Delete</button>
+            <button id="delete" onClick={deleteTodo}>Delete</button>
         </div>
     )
 }
