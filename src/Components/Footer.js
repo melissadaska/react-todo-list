@@ -16,7 +16,7 @@ export default function Footer() {
 
     const deleteTodo = () => {
         const newTodos = todos.filter(todo => {
-            return todo.complete ==== flase
+            return todo.complete === false
         })
         setTodos(newTodos)
         setCheckAll(false)

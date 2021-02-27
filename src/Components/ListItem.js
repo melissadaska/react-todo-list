@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 
-export default function ListItem({todo, id, checkComplete}) {
+export default function ListItem({todo, id, checkComplete, handleEditTodos}) {
     const [onEdit, setOnEdit] = useState(false)
     const [editValue, setEditValue] = useState(todo.name)
 
@@ -10,7 +10,7 @@ export default function ListItem({todo, id, checkComplete}) {
 
     const handleSave = id => {
         setOnEdit(false)
-        if (editvalue) {
+        if (editValue) {
             handleEditTodos(editValue, id)
         } else {
             setEditValue(todo.name)
